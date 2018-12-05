@@ -52,6 +52,7 @@
 		82622A96B47940D4BDFFDA40 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21ED5EECDC56417B874215A4 /* SimpleLineIcons.ttf */; };
 		BD9873738B54452CB23F5D2D /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4F1DC3D333A4DB58B8114B4 /* Zocial.ttf */; };
 		60E7BC15DEC549F8AA70F2AD /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89A495E2E542D7BE0F405C /* libRNGestureHandler.a */; };
+		3F14FFADDD9C4B8DABB86A1E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39BB23AE6A4DF38F6D3802 /* Ionicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -373,6 +374,7 @@
 		C4F1DC3D333A4DB58B8114B4 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		4A8453E79F1447C6AB2C9CF8 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		1F89A495E2E542D7BE0F405C /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9D39BB23AE6A4DF38F6D3802 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -653,6 +655,7 @@
 				5303AEDF89B8490EBA10D851 /* rubicon-icon-font.ttf */,
 				21ED5EECDC56417B874215A4 /* SimpleLineIcons.ttf */,
 				C4F1DC3D333A4DB58B8114B4 /* Zocial.ttf */,
+				9D39BB23AE6A4DF38F6D3802 /* Ionicons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1118,6 +1121,7 @@
 				C700D6B428EB449A83E947DF /* rubicon-icon-font.ttf in Resources */,
 				82622A96B47940D4BDFFDA40 /* SimpleLineIcons.ttf in Resources */,
 				BD9873738B54452CB23F5D2D /* Zocial.ttf in Resources */,
+				3F14FFADDD9C4B8DABB86A1E /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
