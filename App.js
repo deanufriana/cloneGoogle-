@@ -6,7 +6,7 @@ import Icon from 'react-native-ionicons'
 import ProfileScreen from './screen/ProfileScreen'
 import PeopleScreen from './screen/PeopleScreen'
 import DetailScreen from './screen/DetailScreen'
-import PostScreen from './screen/PostScreen'
+import PostScreen from './screen/component/PostScreen'
 import Oratoret from './screen/Oratoret';
 import Komunitas from './screen/Komunitas';
 

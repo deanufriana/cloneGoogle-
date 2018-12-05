@@ -6,10 +6,10 @@ export default class PeopleScreen extends Component {
         return (
             <Container>
                 <Header style={{ backgroundColor: 'white' }}>
-                    <Left style={{ flex: 1 }}>
-                        <Icon onPress={() => this.props.navigation.goBack()} name='arrow-round-back'></Icon>
+                    <Left>
+                        <Icon onPress={() => this.props.navigation.goBack()} name='arrow-back'></Icon>
                     </Left>
-                    <Body style={{ flex: 8 }}>
+                    <Body>
                         <Text>People</Text>
                     </Body>
                     <Right>
@@ -26,9 +26,7 @@ export default class PeopleScreen extends Component {
                                 <Text>Kumar Pratik</Text>
                                 <Text note>Doing what you like will always keep you happy . .</Text>
                             </Body>
-                            <Right>
-                                <Icon name="person-add"></Icon>
-                            </Right>
+                    
                         </ListItem>
                     </List>
                 </Content>

@@ -17,26 +17,45 @@ export default class DetailScreen extends Component {
                         <CardItem>
                             <Left>
                                 <Thumbnail source={data.foto} />
-                                <Body>
+
+                                <View style={{ alignItems: 'stretch', marginLeft: 10 }}>
                                     <Text>{data.nama}</Text>
-                                    <Text note>{data.deskripsi}</Text>
-                                </Body>
+                                    <Text style={{ marginTop: 5 }}> <Icon style={{ fontSize: 16 }} name='globe'> Public</Icon>  </Text>
+                                </View>
+
                             </Left>
+
+                            <Right>
+                                <Text note>
+                                    2m
+                                </Text>
+                            </Right>
+                        </CardItem>
+                        <CardItem>
+                            {data.post.map((post, key) => {
+                                return (
+                                    <Text key={key} note>{post.post}</Text>
+                                )
+                            })}
                         </CardItem>
                         <CardItem cardBody>
-                            <Image source={data.background} style={{ height: 200, width: null, flex: 1 }} />
+                            {data.post.map((gambar, key) => {
+                                return (
+                                    <Image key={key} source={gambar.gambar} style={{ height: 200, width: null, flex: 1 }} />
+                                )
+                            })}
                         </CardItem>
                         <CardItem>
                             <Left>
                                 <Button transparent>
-                                    <Icon active name="add"/>
-                                    <Text>{data.plus}</Text>
+                                    <Icon active name="add" />
+                                    <Text>12</Text>
                                 </Button>
                             </Left>
                             <Right>
                                 <Button transparent>
                                     <Icon active name="share" />
-                                    <Text>{data.share}</Text>
+                                    <Text>4</Text>
                                 </Button>
                             </Right>
                             <Right>

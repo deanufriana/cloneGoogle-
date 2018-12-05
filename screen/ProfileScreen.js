@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Thumbnail, Container, Body, Text, View, Content } from 'native-base';
 import { Image } from 'react-native'
-import PostScreen from './PostScreen';
+import PostScreen from './component/PostScreen';
 
 
 export default class ProfileScreen extends Component {
@@ -19,10 +19,10 @@ export default class ProfileScreen extends Component {
                     </Body>
 
                     <View>
-                        <Text note style={{marginLeft: 20}}>Devi Adi Nufriana, post</Text>
+                        <Text note style={{marginLeft: 20}}>Devi Adi Nufriana</Text>
                     </View>
 
-                    <PostScreen {...this.props}  />
+                    <PostScreen {...this.props} />
 
                 </Content>
             </Container>

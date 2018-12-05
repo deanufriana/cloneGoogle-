@@ -3,7 +3,8 @@ import { Text, Button, Container, Header, Content, Title, Body, Form, Item, Inpu
 import Icon from 'react-native-ionicons'
 import { Image, TouchableOpacity } from 'react-native'
 import Grid from 'react-native-grid-component'
-import user from '../data/user'
+import user from '../../data/user'
+import { _ } from 'lodash'
 
 export default class PostScreen extends Component {
 
@@ -11,17 +12,19 @@ export default class PostScreen extends Component {
         super(props);
         this.navigation = props.navigation;
     }
+
     render() {
+        const datas = _.find(user, { id: this.props.idItem });
         return (
             <Grid
                 renderItem={this.renderItem}
-                data={user}
+                data={datas || user}
                 itemsPerRow={1}
                 {...this.props}
             >
             </Grid>
         );
-    }
+    }    
     renderItem(data, key) {
         return (
             <Content key={key}>
@@ -30,17 +33,29 @@ export default class PostScreen extends Component {
                         <CardItem>
                             <Left>
                                 <Thumbnail source={data.foto} />
-                                <Body>
+
+                                <View style={{ alignItems: 'stretch', marginLeft: 10 }}>
                                     <Text>{data.nama}</Text>
-                                    {data.post.map((post, key) => {
-                                        return (
-                                            <Text key={key} note>{post.post}</Text>
-                                        )
-                                    })}
-                                </Body>
+                                    <Text style={{marginTop: 5}}> <Icon style={{ fontSize: 16 }} name='globe'> Public</Icon>  </Text>
+                                </View>
+
                             </Left>
+
+                            <Right>
+                                <Text note>
+                                    2m
+                                </Text>
+                            </Right>
+                        </CardItem>
+                        <CardItem>
+                            {data.post.map((post, key) => {
+                                return (
+                                    <Text key={key} note>{post.post}</Text>
+                                )
+                            })}
                         </CardItem>
                         <CardItem cardBody>
+
                             {data.post.map((gambar, key) => {
                                 return (
                                     <Image key={key} source={gambar.gambar} style={{ height: 200, width: null, flex: 1 }} />
