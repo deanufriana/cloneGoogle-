@@ -18,7 +18,7 @@ export default class PickerSocial extends Component {
         return (
             <Picker
                 mode="dropdown"
-                style={{ width: undefined, height: 10, marginTop: 6 }}
+                style={{ height: 13, marginTop: 3 }}
                 selectedValue={this.state.selected}
                 onValueChange={this.onValueChange.bind(this)}
             >

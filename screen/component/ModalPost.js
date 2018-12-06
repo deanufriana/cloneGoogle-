@@ -19,24 +19,20 @@ export default class ModalPost extends Component {
                             <Thumbnail source={require('../../assets/user.png')}>
                             </Thumbnail>
                             <View style={{ flex: 3, padding: 5 }}>
-
                                 <Text>Devi Adi Nufriana</Text>
                                 <PickerSocial />
-
                             </View>
-                            <Button  disabled={this.state.text != '' ?false: true} style={{ flex: 1, marginTop: 13,backgroundColor:this.state.text != '' ?'blue': 'gray' }}  small onPress={() => alert('wewe')}>
+                            <Button disabled={this.state.text != '' ? false : true} style={{ flex: 1, marginTop: 13, backgroundColor: this.state.text != '' ? 'blue' : 'gray' }} small onPress={() => alert('wewe')}>
                                 <Text style={{ fontSize: 10 }}> Post </Text>
                             </Button>
                         </View>
-
-                        <Textarea onChangeText={(text) => this.setState({text})} style={{ alignItems: 'stretch' }} placeholder="Tulis Sesuatu" style={{ height: 150 }}>
+                        <Textarea onChangeText={(text) => this.setState({ text })} style={{ alignItems: 'stretch' }} placeholder="Tulis Sesuatu" style={{ height: 145 }}>
                         </Textarea>
-                        <Icon name='camera' style={{ marginLeft: 5 }}>
+                        <Icon name='camera' style={{ marginLeft: 10 }}>
                         </Icon>
                     </View>
                 </View>
             </Container>
-
         )
     }
 }
