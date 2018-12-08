@@ -1,32 +1,49 @@
 import React, { Component } from 'react'
 import user from '../data/user'
 import { Container, Text, View } from 'native-base';
+import { StyleSheet, Button, Image } from 'react-native'
+import { createDrawerNavigator, createAppContainer } from 'react-navigation'
 
-export default class Oratoret extends Component {
+class Oratoret extends Component {
+    static navigationOptions = {
+        drawerLabel: 'Home',
+    };
+
     render() {
         return (
-            <Container>
-                {
-                    user.map((item, key)=>{
-                        return(
-                            <View key={key} >
-                               <Text>id</Text> 
-                                <Text>{item.id}</Text>
-                                {
-                                    item.post.map((pos, key)=> {
-                                        return (
-                                            <View key={key}>
-                                               <Text> {item.nama}</Text>
-                                               <Text> {pos.plus} </Text> 
-                                            </View>
-                                        )
-                                    })
-                                }
-                            </View>
-                        )
-                    })
-                }
-            </Container>
-        )
+            <Button
+                onPress={() => this.props.navigation.navigate('Notifications')}
+                title="Go to notifications"
+            />
+        );
     }
 }
+
+class MyNotificationsScreen extends React.Component {
+    render() {
+        return (
+            <Button
+                onPress={() => this.props.navigation.goBack()}
+                title="Go back home"
+            />
+        );
+    }
+}
+const styles = StyleSheet.create({
+    icon: {
+        width: 24,
+        height: 24,
+    },
+});
+
+const MyDrawerNavigator = createDrawerNavigator({
+    Home: {
+        screen: Oratoret,
+    },
+    Notifications: {
+        screen: MyNotificationsScreen,
+    },
+});
+
+export default MyApp = createAppContainer(MyDrawerNavigator);
+

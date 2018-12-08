@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Header, Content, Title, Body, Card, CardItem, Left, Drawer, Thumbnail, Fab, Button, Right, Textarea, Text } from 'native-base'
+import { Container, Header, Content, Title, Body, Card, CardItem, Left, Drawer, Thumbnail, Fab, Button, Right, Textarea, Text, LogoTitle } from 'native-base'
 import { Modal, TouchableHighlight, View, Alert, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-ionicons'
 import SideBar from './component/SideBar'
@@ -65,10 +65,10 @@ class Beranda extends Component {
                                                         </Left>
                                                     </View>
                                                     <View style={{ flex: 8, marginLeft: 3, justifyContent: 'center' }}>
-                                                        <TextInput placeholder='What New With U?'></TextInput>
+                                                        <TextInput onPress={() => this.setModalVisible(true)} placeholder='What New With U?'></TextInput>
                                                     </View>
                                                     <View style={{ justifyContent: 'center' }}>
-                                                        <Icon onPress={() => this.props.navigation.navigate('People')} name="send"></Icon>
+                                                        <Icon onFocus={() => this.props.navigation.navigate('People')} name="send"></Icon>
                                                     </View>
                                                 </View>
                                             </Body>

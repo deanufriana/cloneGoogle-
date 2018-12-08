@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import { Text, Button, Container, Footer, FooterTab, Body, Form, Item, Input, View, Card, CardItem, Left, Drawer, Thumbnail, Right, Content, List, ListItem } from 'native-base'
 import Icon from 'react-native-ionicons'
-import { Image, TouchableOpacity } from 'react-native'
+import { Image } from 'react-native'
 import user from '../data/user'
-
 import { _ } from 'lodash'
-
-import { TextInput } from 'react-native-gesture-handler';
 
 export default class DetailScreen extends Component {
 
@@ -15,8 +12,8 @@ export default class DetailScreen extends Component {
     }
 
     render() {
-        const id = this.props.navigation.getParam('id', 'NoData');
-        const data = _.find(user, { id: id });
+        const ids = this.props.navigation.getParam('id', 'nodata');
+        const data = _.find(user, { id: ids });
         return (
             <Container>
                 {data.post.map((post, key) => {
@@ -31,17 +28,11 @@ export default class DetailScreen extends Component {
                                             <Text style={{ marginTop: 5 }}> <Icon style={{ fontSize: 16 }} name='globe'> Public</Icon>  </Text>
                                         </View>
                                     </Left>
-                                    <Right>
-                                        <Text note>
-                                            2m
-                                </Text>
-                                    </Right>
+                                    <Text note>2m</Text>
                                 </CardItem>
-
                                 <View>
                                     <CardItem>
                                         <Text note>{post.post}</Text>
-
                                     </CardItem>
                                     <CardItem cardBody>
                                         <Image key={key} source={post.gambar} style={{ height: 200, width: null, flex: 1 }} />
@@ -54,7 +45,16 @@ export default class DetailScreen extends Component {
                                             </Button>
                                         </Left>
                                         <Right>
-                                            <Button transparent>
+                                            <Button transparent onPress={() =>
+                                            Share.share(
+                                                {
+                                                    message: post.post,
+                                                    title: post.nama
+                                                }, 
+                                                {
+                                                    dialogTitle: 'Bagikan Post ?'
+                                                }
+                                                )}>
                                                 <Icon active name="share" />
                                                 <Text>{post.bagikan}</Text>
                                             </Button>
@@ -83,21 +83,20 @@ export default class DetailScreen extends Component {
                                             </Text>
                                             <Text note>{komentar.komentar}</Text>
                                         </Body>
-                                        <Right>
-                                            <Text note> {Date()} </Text>
-                                        </Right>
+                                        <Text note> 2m </Text>
                                     </ListItem>
                                 })}
-
                             </List>
                         </Content>
                     )
                 })}
-                <Footer style={{ backgroundColor: 'white' }}>
+                <Footer style={{ backgroundColor: 'white', borderTopColor: 'black' }}>
                     <FooterTab style={{ backgroundColor: 'white' }}>
                         <Input placeholder="Input Komentar">
                         </Input>
-                        <Icon nama='send' />
+                        <View style={{ justifyContent: 'center' }}>
+                            <Icon name='send' />
+                        </View>
                     </FooterTab>
                 </Footer>
             </Container>

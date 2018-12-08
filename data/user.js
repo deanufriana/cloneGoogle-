@@ -8,7 +8,6 @@ const user = [
         post: [
             {
                 id: '55201140012',
-                nama: 'Devi Adi Nufriana',
                 post: 'Ini merupakan contoh post belajar react native kjashdkfjhksahfkjshfkjdhskjfhksjdhfkjshkfjhsadkjfhaskjhfksajhfkjshfkjshdfkjhdkfjhs',
                 gambar: { uri : "https://cdn-images-1.medium.com/max/800/1*SluXAlSPIxxWjwUsiqD2Kw.png"},
                 komentar: [
@@ -24,7 +23,8 @@ const user = [
                     },
                 ],
                 plus: 12,
-                bagikan: 12
+                bagikan: 12,
+                privasi: 'Public',
             },
         ]
     },
@@ -42,7 +42,8 @@ const user = [
                 gambar: { uri : "https://citrusbits.com/wp-content/uploads/2018/03/react-native-pros-and-cons.png"},
                 komentar: [],
                 plus: 12,
-                bagikan: 12
+                bagikan: 12,
+                privasi: 'Public'
             },
         ]
     },

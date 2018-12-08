@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Content, CardItem, Button, Text, Card, Left, Title, Container, Header, Right, Body, View } from 'native-base';
+import { Content, Button, Text, Card, Left, Title, Container, Header, Right, Body, View } from 'native-base';
 import Icon from 'react-native-ionicons'
 import { Image } from 'react-native'
 import komunitas from '../data/komunitas'
@@ -10,13 +10,10 @@ export default class Komunitas extends Component {
         return (
             <Content key={key}>
                 <Card>
-                    <CardItem cardBody>
-                        <Image source={data.background} style={{ height: 100, width: null, flex: 1 }} />
-                    </CardItem>
+                    <Image source={data.background} style={{ height: 100, width: null }} />
                     <View style={{ margin: 10 }}>
                         <Text>{data.nama}</Text>
                         <Text note>{data.member} member</Text>
-
                     </View>
                     <Button transparent>
                         <Text>Join</Text>

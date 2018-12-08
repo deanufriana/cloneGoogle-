@@ -10,6 +10,8 @@ import PostScreen from './screen/component/PostScreen'
 import Oratoret from './screen/Oratoret';
 import Komunitas from './screen/Komunitas';
 
+
+
 const Login = createBottomTabNavigator(
     {
         Beranda: {
@@ -19,47 +21,52 @@ const Login = createBottomTabNavigator(
             screen: Komunitas
         },
         Profile: {
-            screen: ProfileScreen
+            screen: ProfileScreen,
+            navigationOptions: {
+                tabBarVisible: false,
+            }
         },
     },
     {
-        defaultNavigationOptions: ({ navigation }) => ({
-          tabBarIcon: ({ focused, horizontal, tintColor }) => {
-            const { routeName } = navigation.state;
-              let IconName;
-              if (routeName === 'Beranda') {
-                  IconName = 'home'
-              } else if(routeName === 'Profile'){
-                  IconName = 'person'
-              } else {
-                  IconName = 'aperture'
-              }
-            return <Icon name={IconName} size={horizontal ? 20 : 25} color={tintColor} />;
-          },
-        }),
-        tabBarOptions: {
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
+        defaultNavigationOptions: ({ navigation }) => {
+            return ({
+                tabBarIcon: ({ focused, horizontal, tintColor }) => {
+
+                    const { routeName } = navigation.state;
+                    let IconName;
+                    if (routeName === 'Beranda') {
+                        IconName = 'home'
+                    } else if (routeName === 'Profile') {
+                        IconName = 'person'
+                    } else {
+                        IconName = 'aperture'
+                    }
+                    return <Icon name={IconName} size={horizontal ? 20 : 25} color={tintColor} />;
+                },
+            })
         },
-      }
+        tabBarOptions: {
+            activeTintColor: 'tomato',
+            inactiveTintColor: 'gray',
+        }
+    }
 
 )
 
 const App = createStackNavigator(
     {
         Home: LoginScreen,
-        Beranda: Login, 
+        Beranda: Login,
         People: PeopleScreen,
-        Detail : DetailScreen,
-        PostScreen : PostScreen,
+        Detail: DetailScreen,
+        PostScreen: PostScreen,
         Profile: ProfileScreen,
         Orat: Oratoret,
     },
     {
         headerMode: 'none',
-        initialRouteName: 'Beranda'
+        initialRouteName: 'Home'
     }
 )
-
 
 export default createAppContainer(App)
